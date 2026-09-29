@@ -87,7 +87,8 @@ flowchart TD
 - **🔬 Mathematical Quality Verification**: Automatically calculates **SSIM** (Structural Similarity) and **PSNR** (Peak Signal-to-Noise Ratio) to scientifically prove zero perceptible quality loss (SSIM > 0.98, PSNR > 45 dB).
 - **🚀 60 FPS Gaming & Action Mode (`--60fps`)**: Enforces fluid 60fps constant frame rate for high-octane gaming clips, dance routines, and sports.
 - **📂 Batch Folder Compression (`--batch`)**: Process entire folders of video drafts with a single command.
-- **📱 Clean Dual Interface**: Use it either via the feature-rich **CLI terminal with live progress bars** or as a clean **Python library** inside your own automated pipelines.
+- **📱 Android & Mobile Ready (Termux)**: Compress directly on your Android phone without needing a PC.
+- **💻 Clean Dual Interface**: Use it either via the feature-rich **CLI terminal with live progress bars** or as a clean **Python library** inside your own automated pipelines.
 - **🌐 FastStart Moov Placement**: Rearranges MP4 headers for instant streaming playback and faster TikTok server uploads.
 
 ---
@@ -161,6 +162,77 @@ source venv/bin/activate
 # Install dependencies
 pip install -r requirements.txt
 ```
+
+---
+
+## 📱 Running on Android Mobile (Termux Guide)
+
+You can pre-compress videos **directly on your Android smartphone** using [Termux](https://termux.dev/) without needing a PC!
+
+### ⚡ One-Click Automatic Install (Recommended)
+Open Termux on your phone and run this single command:
+```bash
+pkg update && pkg install -y git && git clone https://github.com/arybishal/Tiktok-Video-Compressor-.git && cd Tiktok-Video-Compressor- && bash termux-install.sh
+```
+*(Tap **Allow** when your phone prompts for storage access).*
+
+This automatically configures Python, FFmpeg, and creates a system shortcut `tiktok-compress` so you can compress videos from any folder on your phone!
+
+---
+
+### 📋 Manual Setup (Step-by-Step)
+If you prefer running commands manually:
+
+1. **Install Termux** from **[F-Droid](https://f-droid.org/en/packages/com.termux/)** or [GitHub Releases](https://github.com/termux/termux-app/releases) *(do not use the outdated Google Play Store build)*.
+2. **Grant Storage Permission**:
+   ```bash
+   termux-setup-storage
+   ```
+3. **Install Python, Git & FFmpeg**:
+   ```bash
+   pkg update -y && pkg install -y python git ffmpeg
+   ```
+4. **Clone the Repository & Install Dependencies**:
+   ```bash
+   git clone https://github.com/arybishal/Tiktok-Video-Compressor-.git
+   cd Tiktok-Video-Compressor-
+   pip install -r requirements.txt
+   ```
+
+---
+
+### 🎥 How to Compress Videos on Your Phone
+
+#### 1. Interactive Setup Wizard (Easiest)
+```bash
+python compress.py -i
+```
+Enter your video's file path when prompted:
+```text
+~/storage/dcim/Camera/VID_20260929.mp4
+```
+
+#### 2. Quick Direct Command
+```bash
+python compress.py ~/storage/dcim/Camera/VID_20260929.mp4
+```
+*Saves an optimized `VID_20260929_tiktok.mp4` directly in your Camera folder, ready to upload to TikTok!*
+
+#### 3. Save to Your Movies / Gallery Folder
+```bash
+python compress.py ~/storage/dcim/Camera/VID_example.mp4 -o ~/storage/movies/tiktok_ready.mp4
+```
+
+### 📂 Termux Phone Storage Reference
+| Where Your Video Is Located | Path in Termux |
+| :--- | :--- |
+| **Camera Roll / DCIM** | `~/storage/dcim/Camera/<filename>.mp4` |
+| **Downloads Folder** | `~/storage/downloads/<filename>.mp4` |
+| **Movies Folder** | `~/storage/movies/<filename>.mp4` |
+| **Internal Storage Root** | `~/storage/shared/<folder>/<filename>.mp4` |
+
+> [!TIP]
+> **Mobile Performance Tip**: On Android devices, select **Encoder [1] `h264`** with preset `fast` or `medium`. Mobile ARM processors (Snapdragon, MediaTek, Tensor) have built-in ARM NEON SIMD vector hardware that renders H.264 ultra-efficiently while keeping battery consumption low.
 
 ---
 
