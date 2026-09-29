@@ -12,6 +12,7 @@ A complete guide for creators and developers to install, configure, and use **Ti
    - [Windows Installation](#windows-installation)
    - [macOS Installation](#macos-installation)
    - [Linux (Ubuntu/Debian) Installation](#linux-ubuntudebian-installation)
+   - [Android (Termux) Installation](#android-termux-installation)
 5. [Command Line (CLI) Creator Guide](#5-command-line-cli-creator-guide)
 6. [Python Library Integration](#6-python-library-integration)
 7. [Hardware Acceleration (NVIDIA NVENC)](#7-hardware-acceleration-nvidia-nvenc)
@@ -96,6 +97,34 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
+
+### Android (Termux) Installation
+You can run **TikTok Video Compressor** directly on Android phones using [Termux](https://termux.dev/) to pre-compress recordings before posting:
+
+1. **Install Termux** (Download from [F-Droid](https://f-droid.org/en/packages/com.termux/) or GitHub Releases — avoid the outdated Google Play Store build).
+2. **Grant Storage Access** (allows reading videos from DCIM, Movies, and Downloads):
+   ```bash
+   termux-setup-storage
+   ```
+3. **Install Python, Git, and FFmpeg**:
+   ```bash
+   pkg update && pkg upgrade -y
+   pkg install -y python git ffmpeg
+   ```
+4. **Clone Repository & Install Dependencies**:
+   ```bash
+   git clone https://github.com/arybishal/Tiktok-Video-Compressor-.git
+   cd Tiktok-Video-Compressor-
+   pip install -r requirements.txt
+   ```
+5. **Optimize Videos Directly from Phone Storage**:
+   ```bash
+   python compress.py ~/storage/dcim/Camera/VID_example.mp4
+   ```
+   *(Or launch the interactive setup wizard with `python compress.py -i`)*
+
+> [!TIP]
+> **Mobile Performance Tip**: On Android devices, select **Encoder [1] `h264`** (with preset `fast` or `medium`). Modern mobile ARM processors encode H.264 very quickly with NEON hardware-level instruction sets.
 
 ---
 

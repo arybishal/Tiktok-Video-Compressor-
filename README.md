@@ -138,6 +138,10 @@ Make sure **Python 3.9+** and **FFmpeg** are installed on your machine:
   ```bash
   sudo apt update && sudo apt install -y ffmpeg
   ```
+* **Android (Termux)**:
+  ```bash
+  pkg update && pkg install -y python git ffmpeg && termux-setup-storage
+  ```
 
 ### 2. Installation
 Clone the repository and install the lightweight dependencies:
