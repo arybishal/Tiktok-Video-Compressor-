@@ -18,6 +18,9 @@ class StreamInfo:
     codec_name: str
     width: Optional[int] = None
     height: Optional[int] = None
+    rotation: int = 0
+    display_width: Optional[int] = None
+    display_height: Optional[int] = None
     pix_fmt: Optional[str] = None
     fps: Optional[float] = None
     bitrate: Optional[int] = None
@@ -43,20 +46,21 @@ class VideoInfo:
 
     @property
     def resolution_str(self) -> str:
-        if self.video_stream and self.video_stream.width and self.video_stream.height:
-            return f"{self.video_stream.width}x{self.video_stream.height}"
+        if self.video_stream and self.video_stream.display_width and self.video_stream.display_height:
+            rot_str = f" (Rotated {self.video_stream.rotation} deg)" if self.video_stream.rotation else ""
+            return f"{self.video_stream.display_width}x{self.video_stream.display_height}{rot_str}"
         return "Unknown"
 
     @property
     def is_vertical_9_16(self) -> bool:
-        if self.video_stream and self.video_stream.width and self.video_stream.height:
-            return self.video_stream.height > self.video_stream.width
+        if self.video_stream and self.video_stream.display_width and self.video_stream.display_height:
+            return self.video_stream.display_height > self.video_stream.display_width
         return False
 
     @property
     def is_4k_or_higher(self) -> bool:
-        if self.video_stream and self.video_stream.width and self.video_stream.height:
-            return self.video_stream.width >= 2160 or self.video_stream.height >= 2160
+        if self.video_stream and self.video_stream.display_width and self.video_stream.display_height:
+            return self.video_stream.display_width >= 2160 or self.video_stream.display_height >= 2160
         return False
 
     @property
@@ -148,12 +152,39 @@ def probe_video(file_path: str) -> VideoInfo:
             if color_transfer in ("smpte2084", "arib-std-b67", "linear") or "10" in pix_fmt:
                 is_hdr = True
 
+            # Parse rotation from side data (Display Matrix) or tags
+            rotation = 0
+            for sd in s.get("side_data_list", []):
+                if "rotation" in sd:
+                    try:
+                        rotation = int(float(sd["rotation"]))
+                        break
+                    except (ValueError, TypeError):
+                        pass
+            if rotation == 0 and "rotate" in s.get("tags", {}):
+                try:
+                    rotation = int(float(s["tags"]["rotate"]))
+                except (ValueError, TypeError):
+                    pass
+
+            raw_w = s.get("width")
+            raw_h = s.get("height")
+            if raw_w and raw_h and abs(rotation) in (90, 270):
+                disp_w = raw_h
+                disp_h = raw_w
+            else:
+                disp_w = raw_w
+                disp_h = raw_h
+
             video_stream = StreamInfo(
                 index=idx,
                 codec_type="video",
                 codec_name=codec_name,
-                width=s.get("width"),
-                height=s.get("height"),
+                width=raw_w,
+                height=raw_h,
+                rotation=rotation,
+                display_width=disp_w,
+                display_height=disp_h,
                 pix_fmt=pix_fmt,
                 fps=fps,
                 bitrate=stream_bitrate,

@@ -27,11 +27,14 @@ def measure_quality(original_file: str, compressed_file: str) -> QualityScore:
     if not ffmpeg_bin:
         return QualityScore(None, None, False, "FFmpeg not available to compute metrics.")
 
-    filter_complex = "[0:v][1:v]ssim;[0:v][1:v]psnr"
+    # Align resolution using scale2ref so SSIM/PSNR can compare 4K source to 1080p compressed video
+    filter_complex = "[1:v][0:v]scale2ref=flags=lanczos[ref][main];[main][ref]ssim;[main][ref]psnr"
     cmd = [
         ffmpeg_bin,
         "-hide_banner",
+        "-ignore_unknown",
         "-i", compressed_file,
+        "-ignore_unknown",
         "-i", original_file,
         "-lavfi", filter_complex,
         "-f", "null",

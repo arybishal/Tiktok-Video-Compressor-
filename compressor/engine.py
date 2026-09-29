@@ -99,8 +99,10 @@ class VideoCompressor:
         info = probe_video(input_path)
 
         if not output_path:
-            base, ext = os.path.splitext(input_path)
-            output_path = f"{base}_tiktok_optimized{ext or '.mp4'}"
+            base, _ = os.path.splitext(input_path)
+            output_path = f"{base}_tiktok_optimized.mp4"
+        elif output_path.lower().endswith(".mov") and self.codec in ("av1", "libsvtav1"):
+            output_path = os.path.splitext(output_path)[0] + ".mp4"
 
         os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
 

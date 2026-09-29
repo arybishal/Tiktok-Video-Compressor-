@@ -59,6 +59,12 @@ def run_compression(
     sharpen: bool = True,
     scale_to_1080p: bool = True,
 ):
+    if not output_file:
+        base, _ = os.path.splitext(input_file)
+        output_file = f"{base}_tiktok.mp4"
+    elif output_file.lower().endswith(".mov") and codec.lower() in ("av1", "libsvtav1"):
+        output_file = os.path.splitext(output_file)[0] + ".mp4"
+
     try:
         info = compressor.probe_video(input_file)
     except Exception as e:
@@ -200,8 +206,8 @@ def interactive_mode():
 
     verify = Confirm.ask("Compute SSIM/PSNR mathematical quality check after encoding?", default=True)
 
-    base, ext = os.path.splitext(input_file)
-    default_out = f"{base}_tiktok{ext}"
+    base, _ = os.path.splitext(input_file)
+    default_out = f"{base}_tiktok.mp4"
     output_file = Prompt.ask("Output file path", default=default_out).strip('"\'')
 
     console.print("\n")
