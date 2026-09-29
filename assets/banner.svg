@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a0f"/>
+      <stop offset="50%" stop-color="#0f131c"/>
+      <stop offset="100%" stop-color="#05070a"/>
+    </linearGradient>
+
+    <!-- TikTok Neon Brand Gradients -->
+    <linearGradient id="tiktokGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#25F4EE"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FE2C55"/>
+    </linearGradient>
+
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#25F4EE"/>
+      <stop offset="100%" stop-color="#00A39E"/>
+    </linearGradient>
+
+    <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FE2C55"/>
+      <stop offset="100%" stop-color="#B80026"/>
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1b212f" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#10141e" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#25F4EE" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FE2C55" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="glowPink" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#25F4EE" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="520" rx="16" fill="url(#bgGrad)"/>
+  <rect width="1200" height="520" rx="16" fill="url(#grid)"/>
+
+  <!-- Ambient Glow Orbs -->
+  <circle cx="150" cy="100" r="180" fill="#25F4EE" opacity="0.12" filter="url(#glowCyan)"/>
+  <circle cx="1050" cy="420" r="220" fill="#FE2C55" opacity="0.14" filter="url(#glowPink)"/>
+
+  <!-- Outer Border Stroke -->
+  <rect x="2" y="2" width="1196" height="516" rx="15" fill="none" stroke="url(#borderGrad)" stroke-width="2"/>
+
+  <!-- Top Badge: TikTok Creator Tool -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="230" height="32" rx="16" fill="#151b26" stroke="#25F4EE" stroke-opacity="0.4" stroke-width="1"/>
+    <circle cx="18" cy="16" r="6" fill="#25F4EE"/>
+    <text x="34" y="21" fill="#25F4EE" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1">TIKTOK CREATOR TOOL</text>
+  </g>
+
+  <!-- Main Title -->
+  <text x="60" y="135" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="52" font-weight="900" fill="#ffffff" letter-spacing="-1">
+    TIKTOK <tspan fill="url(#tiktokGrad)">VIDEO COMPRESSOR</tspan>
+  </text>
+
+  <!-- Subtitle Tagline -->
+  <text x="60" y="175" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="400" fill="#9ba8bc">
+    Bypass TikTok's Destructive Recompression • Keep 100% Crisp Visual Fidelity
+  </text>
+
+  <!-- Feature Pills Row -->
+  <g transform="translate(60, 205)">
+    <!-- Pill 1 -->
+    <rect x="0" y="0" width="160" height="34" rx="8" fill="#141923" stroke="#25F4EE" stroke-opacity="0.3"/>
+    <text x="14" y="22" fill="#e1e7f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="13" font-weight="600">⚡ Lanczos 1080p</text>
+
+    <!-- Pill 2 -->
+    <rect x="175" y="0" width="165" height="34" rx="8" fill="#141923" stroke="#FE2C55" stroke-opacity="0.3"/>
+    <text x="189" y="22" fill="#e1e7f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="13" font-weight="600">🎨 HDR to Rec.709</text>
+
+    <!-- Pill 3 -->
+    <rect x="355" y="0" width="170" height="34" rx="8" fill="#141923" stroke="#25F4EE" stroke-opacity="0.3"/>
+    <text x="369" y="22" fill="#e1e7f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="13" font-weight="600">🛡️ VBV Rate Ceiling</text>
+
+    <!-- Pill 4 -->
+    <rect x="540" y="0" width="150" height="34" rx="8" fill="#141923" stroke="#FE2C55" stroke-opacity="0.3"/>
+    <text x="554" y="22" fill="#e1e7f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="13" font-weight="600">🚀 NVENC GPU</text>
+  </g>
+
+  <!-- Right Visual Mockup: Live Metrics Terminal Card -->
+  <g transform="translate(740, 50)">
+    <!-- Terminal Box -->
+    <rect x="0" y="0" width="410" height="420" rx="16" fill="url(#cardGrad)" stroke="url(#borderGrad)" stroke-width="1.5"/>
+    
+    <!-- Window Header -->
+    <rect x="0" y="0" width="410" height="42" rx="16" fill="#151b27"/>
+    <circle cx="24" cy="21" r="5.5" fill="#FE2C55"/>
+    <circle cx="42" cy="21" r="5.5" fill="#f5a623"/>
+    <circle cx="60" cy="21" r="5.5" fill="#25F4EE"/>
+    <text x="85" y="26" fill="#718096" font-family="'Courier New', monospace" font-size="12" font-weight="bold">tiktok_optimizer.py — 60 FPS</text>
+
+    <!-- Terminal Lines -->
+    <g transform="translate(24, 70)" font-family="'Fira Code', 'Courier New', monospace" font-size="13">
+      <text y="0" fill="#25F4EE">➜ python compress.py video.mp4 --60fps</text>
+      <text y="28" fill="#a0aec0">[INFO] Input: 4K 2160x3840 (iPhone HDR)</text>
+      <text y="54" fill="#a0aec0">[PRESET] Mode: TikTok Best Quality</text>
+      <text y="80" fill="#a0aec0">[FILTER] Tonemap: Hable BT.709 SDR</text>
+      <text y="106" fill="#a0aec0">[SCALE] Lanczos 1080x1920 (9:16)</text>
+      
+      <!-- Progress Bar Visual -->
+      <text y="142" fill="#FE2C55" font-weight="bold">Optimizing for TikTok...</text>
+      <rect x="0" y="156" width="362" height="10" rx="5" fill="#202736"/>
+      <rect x="0" y="156" width="362" height="10" rx="5" fill="url(#tiktokGrad)"/>
+
+      <!-- Stats Box -->
+      <g transform="translate(0, 186)">
+        <rect x="0" y="0" width="362" height="135" rx="10" fill="#0b0e14" stroke="#25F4EE" stroke-opacity="0.2"/>
+        
+        <text x="16" y="26" fill="#e2e8f0" font-weight="bold">Original Size:</text>
+        <text x="240" y="26" fill="#cbd5e0">285.4 MB</text>
+
+        <text x="16" y="52" fill="#e2e8f0" font-weight="bold">TikTok Ready:</text>
+        <text x="240" y="52" fill="#25F4EE" font-weight="bold">42.1 MB (-85%)</text>
+
+        <text x="16" y="78" fill="#e2e8f0" font-weight="bold">SSIM Score:</text>
+        <text x="240" y="78" fill="#48bb78" font-weight="bold">0.9952 (Prism)</text>
+
+        <text x="16" y="104" fill="#e2e8f0" font-weight="bold">PSNR Score:</text>
+        <text x="240" y="104" fill="#48bb78" font-weight="bold">47.8 dB (Master)</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Left Bottom Stat Cards -->
+  <g transform="translate(60, 275)">
+    <!-- Stat 1 -->
+    <rect x="0" y="0" width="205" height="105" rx="12" fill="url(#cardGrad)" stroke="#25F4EE" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="20" y="32" fill="#718096" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="12" font-weight="700">COMPRESSION RATIO</text>
+    <text x="20" y="75" fill="#25F4EE" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="36" font-weight="900">Up to 85%</text>
+    <text x="20" y="94" fill="#a0aec0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="11">Smaller without quality loss</text>
+
+    <!-- Stat 2 -->
+    <rect x="225" y="0" width="205" height="105" rx="12" fill="url(#cardGrad)" stroke="#FE2C55" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="245" y="32" fill="#718096" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="12" font-weight="700">SSIM QUALITY SCORE</text>
+    <text x="245" y="75" fill="#FE2C55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="36" font-weight="900">0.995+</text>
+    <text x="245" y="94" fill="#a0aec0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="11">Humanly indistinguishable</text>
+
+    <!-- Stat 3 -->
+    <rect x="450" y="0" width="205" height="105" rx="12" fill="url(#cardGrad)" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1"/>
+    <text x="470" y="32" fill="#718096" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="12" font-weight="700">GPU ACCELERATION</text>
+    <text x="470" y="75" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="36" font-weight="900">10x Speed</text>
+    <text x="470" y="94" fill="#a0aec0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="11">NVIDIA NVENC hardware</text>
+  </g>
+
+  <!-- Bottom Terminal Command Highlight -->
+  <g transform="translate(60, 410)">
+    <rect x="0" y="0" width="655" height="55" rx="10" fill="#111622" stroke="#25F4EE" stroke-opacity="0.4" stroke-width="1"/>
+    <text x="20" y="34" fill="#25F4EE" font-family="'Fira Code', 'Courier New', monospace" font-size="16" font-weight="bold">$</text>
+    <text x="42" y="34" fill="#ffffff" font-family="'Fira Code', 'Courier New', monospace" font-size="16" font-weight="bold">pip install -r requirements.txt &amp;&amp; python compress.py video.mp4</text>
+  </g>
+</svg>

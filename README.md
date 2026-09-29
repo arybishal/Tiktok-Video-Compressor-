@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="TikTok Video Compressor Hero Banner" width="100%">
+</p>
+
 <div align="center">
 
 # 🎵 TikTok Video Compressor
@@ -59,7 +63,11 @@ flowchart TD
     end
 ```
 
-### Side-by-Side Comparison
+<p align="center">
+  <img src="assets/comparison.svg" alt="Direct TikTok Upload vs Pre-Optimized" width="100%">
+</p>
+
+### Side-by-Side Comparison Matrix
 
 | Issue | Direct Raw TikTok Upload | Pre-Compressed with This Tool |
 | :--- | :--- | :--- |

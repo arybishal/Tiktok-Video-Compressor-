@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090c12"/>
+      <stop offset="100%" stop-color="#040608"/>
+    </linearGradient>
+
+    <!-- Bad Upload Card Gradient -->
+    <linearGradient id="badCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#241014" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#14070a" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Good Upload Card Gradient -->
+    <linearGradient id="goodCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f2628" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#081517" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="badBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e53e3e" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#9b2c2c" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <linearGradient id="goodBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#25F4EE" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#38a169" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="480" rx="16" fill="url(#bg)"/>
+
+  <!-- Section Header -->
+  <text x="600" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="-0.5">
+    WHY DIRECT TIKTOK UPLOADS FAIL VS. HOW THIS TOOL FIXES IT
+  </text>
+  <text x="600" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#a0aec0" text-anchor="middle">
+    TikTok's server downscaler ruins unoptimized 4K videos. Pre-compression guarantees pristine delivery.
+  </text>
+
+  <!-- Left Card: Direct Raw Upload (The Problem) -->
+  <g transform="translate(60, 115)">
+    <rect width="520" height="325" rx="14" fill="url(#badCardGrad)" stroke="url(#badBorder)" stroke-width="1.5"/>
+    
+    <!-- Card Header -->
+    <g transform="translate(25, 32)">
+      <circle cx="14" cy="14" r="14" fill="#e53e3e" opacity="0.2"/>
+      <text x="14" y="20" fill="#e53e3e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="16" font-weight="bold" text-anchor="middle">✕</text>
+      <text x="38" y="20" fill="#fc8181" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="20" font-weight="800">Direct Raw TikTok Upload</text>
+    </g>
+
+    <!-- Problem Points -->
+    <g transform="translate(25, 80)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="14">
+      <!-- Point 1 -->
+      <text y="22" fill="#feb2b2" font-weight="bold">❌ Blurry 4K Downscale:</text>
+      <text y="42" fill="#cbd5e0">TikTok’s server uses low-cost bilinear downscaling, making textures fuzzy.</text>
+
+      <!-- Point 2 -->
+      <text y="78" fill="#feb2b2" font-weight="bold">❌ Washed-Out iPhone HDR:</text>
+      <text y="98" fill="#cbd5e0">Dolby Vision / HLG metadata is stripped, turning videos gray and flat.</text>
+
+      <!-- Point 3 -->
+      <text y="134" fill="#feb2b2" font-weight="bold">❌ Severe Bitrate Slaughter:</text>
+      <text y="154" fill="#cbd5e0">Large files (40–80 Mbps) trigger TikTok's bot to crush bitrate to ~2 Mbps.</text>
+
+      <!-- Point 4 -->
+      <text y="190" fill="#feb2b2" font-weight="bold">❌ Stutter &amp; Audio Drift:</text>
+      <text y="210" fill="#cbd5e0">Variable Frame Rates (VFR) cause stuttering on modern 120Hz mobile screens.</text>
+    </g>
+  </g>
+
+  <!-- Right Card: Pre-Optimized (The Solution) -->
+  <g transform="translate(620, 115)">
+    <rect width="520" height="325" rx="14" fill="url(#goodCardGrad)" stroke="url(#goodBorder)" stroke-width="1.5"/>
+
+    <!-- Card Header -->
+    <g transform="translate(25, 32)">
+      <circle cx="14" cy="14" r="14" fill="#25F4EE" opacity="0.2"/>
+      <text x="14" y="20" fill="#25F4EE" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="16" font-weight="bold" text-anchor="middle">✓</text>
+      <text x="38" y="20" fill="#25F4EE" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="20" font-weight="800">Pre-Optimized with Compressor</text>
+    </g>
+
+    <!-- Solution Points -->
+    <g transform="translate(25, 80)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="14">
+      <!-- Point 1 -->
+      <text y="22" fill="#81e6d9" font-weight="bold">✔ Razor-Sharp Lanczos 1080p:</text>
+      <text y="42" fill="#e2e8f0">Precision 8-tap filter retains crisp edge acuity before upload.</text>
+
+      <!-- Point 2 -->
+      <text y="78" fill="#81e6d9" font-weight="bold">✔ Vibrant BT.709 Color Tonemapping:</text>
+      <text y="98" fill="#e2e8f0">Accurately converts HDR to Rec.709 SDR so colors pop on all phones.</text>
+
+      <!-- Point 3 -->
+      <text y="134" fill="#81e6d9" font-weight="bold">✔ Calibrated VBV Bitrate Ceiling:</text>
+      <text y="154" fill="#e2e8f0">Feeds TikTok the exact 12 Mbps sweet-spot, bypassing destructive re-encoding.</text>
+
+      <!-- Point 4 -->
+      <text y="190" fill="#81e6d9" font-weight="bold">✔ Locked Constant Frame Rate (CFR):</text>
+      <text y="210" fill="#e2e8f0">Guarantees perfectly synchronized audio and butter-smooth 60fps playback.</text>
+    </g>
+  </g>
+</svg>
