@@ -1,0 +1,21 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Output and temp files
+*_compressed.*
+test_*.mp4
+
+# IDE & OS files
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
